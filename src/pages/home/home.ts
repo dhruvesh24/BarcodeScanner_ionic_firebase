@@ -16,6 +16,7 @@ export class HomePage {
   scannedData : any={};
   arrData =[]
   myInput
+  barcode 
 
   aboutPage = AboutPage;
 
@@ -37,7 +38,9 @@ export class HomePage {
       console.log('error :',err)
 
     })
+      this.fdb.list("/myItems/").push(this.scannedData);
   }
+  
 /*   encode(){
     this.scanner.encode(this.scanner.Encode.TEXT_TYPE,this.encodText).then((data) =>{
       this.encodedData = data;
@@ -45,12 +48,7 @@ export class HomePage {
       console.log('error :',err)
     })
   } */
-  btnAddClicked(){
-    this.fdb.list("/myItems/").push(this.myInput);
-
-  }
-
-
+ 
 }
 
 
