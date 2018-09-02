@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h3>Welcome to Myapp</h3>
+
+
+  <ion-card-content>
+<!--     <div>
+    <ion-input style="background-color: gray" type="text" [(ngModel)]="encodText"></ion-input> 
+    <button ion-button block  (click)="encode()">Encode</button>
+  </div> -->
+
+  <div>
+      <button ion-button block (click)="scan()">Scan</button>
+    <div *ngIf="scannedData.text">
+      <label>your barcode is </label>
+      <br>
+      <span>{{scannedData.text}} </span>
+    </div>
+  </div>
+  
+    <!-- <button [navPush]="aboutPage">Go To About</button> -->
+  </ion-card-content>
+
+  <ion-item>
+    <ion-input [(ngModel)]="myInput"> </ion-input>
+  </ion-item>
+  <button (click)="btnAddClicked()" ion-button>Click Here</button> <br>
+
+  <button ion-button secondary menuToggle>Menu</button>
+</ion-content>
